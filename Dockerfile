@@ -1,6 +1,6 @@
 FROM buildpack-deps:jessie-curl
 
-LABEL maintainer="Mihkel Sokk <mihkelsokk@gmail.com>"
+LABEL maintainer="Tobi Schäfer <tobi.schaefer@modul.ac.at>"
 
 ENV RENDERER_ACCESS_KEY=changeme \
     CONCURRENCY=1 \
