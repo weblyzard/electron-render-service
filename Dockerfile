@@ -16,6 +16,10 @@ WORKDIR /app
 # Add subpixel hinting
 COPY .fonts.conf /root/.fonts.conf
 
+# Remove non-LTS architectures of Jessie from APT sources
+# See https://stackoverflow.com/questions/55361762/apt-get-update-fails-with-404-in-a-previously-working-build
+RUN sed -i '/jessie-updates/d' /etc/apt/sources.list
+
 # Install the packages needed to run Electron
 RUN sed -i 's/main/main contrib/g' /etc/apt/sources.list
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
