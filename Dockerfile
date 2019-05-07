@@ -47,8 +47,8 @@ RUN sed -i '/\"electron\"\:/d' ./package.json \
 	&& npm install --production --no-optional
 
 # Install Electron
-# You can define a different Electron version on build using the `--build-args electron_version=x.y.z` argument
-ARG electron_version=4.0.6
+# You can define a different Electron version on build using the `--build-arg electron_version=x.y.z` argument
+ARG electron_version=4.2.0
 RUN wget "https://github.com/atom/electron/releases/download/v${electron_version}/electron-v${electron_version}-linux-x64.zip" -O electron.zip \
 	&& unzip electron.zip \
 	&& rm electron.zip
